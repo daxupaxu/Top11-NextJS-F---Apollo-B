@@ -1,0 +1,10 @@
+*made only to imagine structure of schema*
+
+Schema types:
+
+
+- fetch top11 content records from db
+- fetch specific content by its id
+- leave a rate
+- read specific record as an article
+
