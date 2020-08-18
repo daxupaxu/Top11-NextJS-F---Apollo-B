@@ -1,7 +1,7 @@
 # top11
 
 # npm start
-To run graphql server from the 'server' folder
+To run graphql server from the 'apollo-graphql' folder
 
 runs at localhost:4000
 
