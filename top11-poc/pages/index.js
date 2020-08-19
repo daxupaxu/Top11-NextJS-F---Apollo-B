@@ -2,6 +2,8 @@ import React from "react";
 import { withApollo } from "../libs/apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { allData } from "../gql/schema";
+import Navbar from "../components/Navbar";
+import Articles from "../components/Articles";
 
 const Home = () => {
   const { loading, error, data } = useQuery(allData);
@@ -10,23 +12,8 @@ const Home = () => {
 
   return (
     <div className="main">
-      <h1>Categories fetched from API</h1>
-      <div className="categories">
-        {data.categories.map((data) => (
-          <h2>{data.category}</h2>
-        ))}
-      </div>
-      <h1>Articles fetched from API</h1>
-      <div className="articles">
-        {data.articles.map((data) => (
-          <ul key={data.id}>
-            <li>
-              <h2>{data.title}</h2>
-              {data.content}
-            </li>
-          </ul>
-        ))}
-      </div>
+      <Navbar />
+      <Articles data={data} />
     </div>
   );
 };
