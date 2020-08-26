@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web-front:
+    container_name: next-js-docker
+    restart: always
+    build: ./front
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - "mongo"
+  graphql:
+    container_name: apollo-graphql-docker
+    restart: always
+    build: ./backend
+    command: npm start
+    ports:
+      - "4000:4000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongodb
+    image: mongo
+    volumes:
+      - ./backend/data/db:/data/db
+    ports:
+      - "27017:27017"
