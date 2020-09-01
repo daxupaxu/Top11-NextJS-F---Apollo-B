@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Navbar = () => {
+const Navbar: React.FunctionComponent = () => {
   return (
     <Main>
       <Title>Top 11</Title>

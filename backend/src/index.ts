@@ -7,7 +7,7 @@ import { typeDefs } from "./typeDefs";
 const startServer = async () => {
   const app = express();
 
-  await mongoose.connect("mongodb://mongo/tops11", {
+  await mongoose.connect("mongodb://mongodb:27017/tops11", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,

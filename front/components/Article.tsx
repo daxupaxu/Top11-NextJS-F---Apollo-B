@@ -1,10 +1,9 @@
 import React from "react";
 
-const Article = ({ data }) => {
+const Article: React.FunctionComponent = () => {
   return (
     <div>
-      <h4>{data.title}</h4>
-      <p>{data.content}</p>
+      <h4> Single article </h4>
     </div>
   );
 };

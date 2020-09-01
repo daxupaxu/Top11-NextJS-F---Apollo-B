@@ -5,4 +5,4 @@ export const Post = mongoose.model("Post", {
   content: String,
   createdAt: Date,
   updatedAt: Date,
-});
+} as any);

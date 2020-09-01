@@ -5,15 +5,16 @@ import { allData } from "../gql/schema";
 import Navbar from "../components/Navbar";
 import Articles from "../components/Articles";
 
-const Home = () => {
+const Home: React.FunctionComponent = () => {
   const { loading, error, data } = useQuery(allData);
   if (error) return <h1>Error</h1>;
   if (loading) return <h1>Loading...</h1>;
 
   return (
     <div className="main">
+      {data.id}
       <Navbar />
-      <Articles data={data} />
+      <Articles />
     </div>
   );
 };

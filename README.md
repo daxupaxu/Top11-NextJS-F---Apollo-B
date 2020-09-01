@@ -2,9 +2,9 @@
 
 # To run together inside Docker
 
-To build the whole app with docker just use docker-compose up
+To build app with docker just use docker-compose up
 
-# To run seperatly
+# To run seperate
 
 # npm start
 

@@ -1,20 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import Article from "./Article";
-import Categories from "../components/Categories";
+import Categories from "./Categories";
 
-const Articles = ({ data }) => {
+const Articles: React.FunctionComponent = () => {
   return (
     <Main>
       <Left>
-        <Categories data={data.categories} />
+        <Categories />
       </Left>
       <Right>
         <Header>News</Header>
         <div className="articles-list">
-          {data.articles.map((article) => (
-            <Article data={article} key={article.id} />
-          ))}
+          {/* {data.articles.map((article) => ( */}
+          <Article />
         </div>
       </Right>
     </Main>
