@@ -1,14 +1,13 @@
 import gql from "graphql-tag";
 
 export const allData = gql`
-  query getArticles {
-    articles {
+  query Posts {
+    posts {
       id
-      title
+      author
       content
-    }
-    categories {
-      category
+      createdAt
+      updatedAt
     }
   }
 `;

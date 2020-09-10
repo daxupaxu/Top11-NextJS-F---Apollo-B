@@ -3,18 +3,16 @@ import { withApollo } from "../libs/apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { allData } from "../gql/schema";
 import Navbar from "../components/Navbar";
-import Articles from "../components/Articles";
+import Posts from "../components/Posts";
 
-const Home: React.FunctionComponent = () => {
-  const { loading, error, data } = useQuery(allData);
-  if (error) return <h1>Error</h1>;
+const Home: React.FC = () => {
+  const { loading, error, data } = useQuery(allData) as any;
+  if (error) return <h1>error</h1>;
   if (loading) return <h1>Loading...</h1>;
-
   return (
     <div className="main">
-      {data.id}
       <Navbar />
-      <Articles />
+      <Posts data={data.posts} />
     </div>
   );
 };
